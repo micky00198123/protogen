@@ -10,8 +10,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class MaxLedServiceImpl implements MaxLedService {
 
+    long prev, next;
+
     @Override
     public String getLedData(Integer id, String module) {
+
+        if(module == null || "em".equals(module)){
+            return "";
+        }
+
+        prev = System.currentTimeMillis();
 
         FaceMapping faceMapping = new FaceMapping().selectById(id);
         if(faceMapping == null){
@@ -30,6 +38,9 @@ public class MaxLedServiceImpl implements MaxLedService {
             return "";
         }
 
+        next = System.currentTimeMillis();
+        System.out.println(next-prev);
+
         return face.getLedData();
 
     }
@@ -41,7 +52,7 @@ public class MaxLedServiceImpl implements MaxLedService {
             return "";
         }
         data = Util.pacData(data);
-        data = Util.doubleData(data, 3);
+//        data = Util.doubleData(data, 3);
         return data;
     }
 

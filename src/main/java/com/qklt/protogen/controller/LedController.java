@@ -15,15 +15,22 @@ public class LedController {
     @Autowired
     private MaxLedService maxLedService;
 
-    @GetMapping("/led/{id}/{module}")
+
+
+    @GetMapping("/led/{id}/{module1}@{module2}@{module3}@{module4}")
     @ResponseBody
-    public String transportLedData(@PathVariable Integer id, @PathVariable String module){
-        if(null==id || 0>=id || null==module || "".equals(module)){
+    public String transportLedData2(@PathVariable Integer id,
+                                    @PathVariable String module1, @PathVariable String module2,
+                                    @PathVariable String module3, @PathVariable String module4){
+        if(null==id || 0>=id){
             return "";
         }
-        else{
-            return maxLedService.getPacLedData(id, module);
-        }
+
+        String data = maxLedService.getPacLedData(id, module1) +
+                maxLedService.getPacLedData(id, module2) +
+                maxLedService.getPacLedData(id, module3) +
+                maxLedService.getPacLedData(id, module4);
+        return data;
     }
 
     @GetMapping("/f_num")
