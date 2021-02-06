@@ -26,6 +26,9 @@ public class MaxLedServiceImpl implements MaxLedService {
                     .eq("face_name", "happy")
                     .eq("module_name", module));
         }
+        if(face == null){
+            return "";
+        }
 
         return face.getLedData();
 
@@ -40,6 +43,11 @@ public class MaxLedServiceImpl implements MaxLedService {
         data = Util.pacData(data);
         data = Util.doubleData(data, 3);
         return data;
+    }
+
+    @Override
+    public Integer countFaceNum() {
+        return new FaceMapping().selectCount(new QueryWrapper<FaceMapping>());
     }
 
 

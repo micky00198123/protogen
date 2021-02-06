@@ -6,4 +6,6 @@ public interface MaxLedService {
 
     String getPacLedData(Integer id, String module);
 
+    Integer countFaceNum();
+
 }

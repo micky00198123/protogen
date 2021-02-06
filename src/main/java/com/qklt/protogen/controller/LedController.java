@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/led")
+//@RequestMapping("")
 public class LedController {
 
     @Autowired
     private MaxLedService maxLedService;
 
-    @GetMapping("/{id}/{module}")
+    @GetMapping("/led/{id}/{module}")
     @ResponseBody
     public String transportLedData(@PathVariable Integer id, @PathVariable String module){
         if(null==id || 0>=id || null==module || "".equals(module)){
@@ -24,6 +24,12 @@ public class LedController {
         else{
             return maxLedService.getPacLedData(id, module);
         }
+    }
+
+    @GetMapping("/f_num")
+    @ResponseBody
+    public Integer transportFaceNum(){
+        return maxLedService.countFaceNum();
     }
 
 
