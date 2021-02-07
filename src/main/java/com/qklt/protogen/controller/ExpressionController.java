@@ -13,7 +13,7 @@ import java.util.Map;
  * @since 2021-02-07
  */
 @RestController
-@RequestMapping("/protogen/exp/")
+@RequestMapping("/exp")
 public class ExpressionController {
 
     private Expression currExp, prevExp, nextExp;

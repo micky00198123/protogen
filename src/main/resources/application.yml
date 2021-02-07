@@ -1,7 +1,7 @@
 spring:
   datasource:
-    username: protogen_user1
-    password: protogen_user1_123456
+    username: protogen_user3
+    password: protogen_user3_123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://121.36.26.175:3306/protogen?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=CTT
+    url: jdbc:mysql://localhost:3306/protogen?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=CTT
 
