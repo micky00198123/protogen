@@ -41,6 +41,44 @@ public class ExpressionController {
         return expLedService.getExp(id).getData();
     }
 
+    @GetMapping("/ledr/{id}")
+    @ResponseBody
+    public String getExpRightData(@PathVariable Integer id){
+        if(currExp==null || prevExp==null || nextExp==null){
+            faceNum = expLedService.countExpNum();
+            init(id);
+        }
+        if(currExp.getExpressionId().equals(id)){
+            return currExp.getRData();
+        }
+        if(prevExp.getExpressionId().equals(id)){
+            return prevExp.getRData();
+        }
+        if(nextExp.getExpressionId().equals(id)){
+            return nextExp.getRData();
+        }
+        return expLedService.getExp(id).getRData();
+    }
+
+    @GetMapping("/ledl/{id}")
+    @ResponseBody
+    public String getExpLeftData(@PathVariable Integer id){
+        if(currExp==null || prevExp==null || nextExp==null){
+            faceNum = expLedService.countExpNum();
+            init(id);
+        }
+        if(currExp.getExpressionId().equals(id)){
+            return currExp.getLData();
+        }
+        if(prevExp.getExpressionId().equals(id)){
+            return prevExp.getLData();
+        }
+        if(nextExp.getExpressionId().equals(id)){
+            return nextExp.getLData();
+        }
+        return expLedService.getExp(id).getLData();
+    }
+
     @GetMapping("/f_num")
     @ResponseBody
     public Integer getExpNum(){

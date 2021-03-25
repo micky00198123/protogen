@@ -20,6 +20,10 @@ public class Util {
         return pac.toString();
     }
 
+    public static String[] unPac(String s){
+        return s.split("}");
+    }
+
     public static String pacDataN90(String s){
         StringBuilder pac = new StringBuilder();
         String[] list = flipListN90(getList(s));

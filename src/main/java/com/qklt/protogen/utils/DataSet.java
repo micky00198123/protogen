@@ -3,10 +3,10 @@ package com.qklt.protogen.utils;
 public class DataSet {
 
     public static void main(String[] args) {
-        String s = "B11000000,\n" +
-                "  B11100000,\n" +
-                "  B00110000,\n" +
-                "  B11110000,\n" +
+        String s = "B00000000,\n" +
+                "  B00000000,\n" +
+                "  B00000000,\n" +
+                "  B00000000,\n" +
                 "  B00000000,\n" +
                 "  B00000000,\n" +
                 "  B00000000,\n" +

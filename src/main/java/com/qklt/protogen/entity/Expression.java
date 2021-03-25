@@ -84,4 +84,12 @@ public class Expression extends Model<Expression> implements Serializable {
                 ln1+le1+le2+lm1+lm2+lm3+lm4;
     }
 
+    public String getRData(){
+        return rn1+re1+re2+rm1+rm2+rm3+rm4;
+    }
+
+    public String getLData(){
+        return ln1+le1+le2+lm1+lm2+lm3+lm4;
+    }
+
 }
